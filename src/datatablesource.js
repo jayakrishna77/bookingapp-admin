@@ -1,14 +1,14 @@
 export const userColumns = [
   { field: "id", headerName: "ID", width: 70 },
   {
-    field: "user",
-    headerName: "User",
+    field: "name",
+    headerName: "Name",
     width: 230,
     renderCell: (params) => {
       return (
         <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.username}
+          <img className="cellImg" src={params.row.img || "https://i.ibb.co/MBtjqXQ/no-avatar.gif"} alt="avatar" />
+          {params.row.name}
         </div>
       );
     },
@@ -20,21 +20,19 @@ export const userColumns = [
   },
 
   {
-    field: "age",
-    headerName: "Age",
+    field: "country",
+    headerName: "Country",
     width: 100,
   },
   {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
+    field: "city",
+    headerName: "City",
+    width: 100,
+  },
+  {
+    field: "phone",
+    headerName: "Phone",
+    width: 100,
   },
 ];
 
@@ -119,5 +117,55 @@ export const userRows = [
     email: "snow@gmail.com",
     status: "active",
     age: 65,
+  },
+];
+
+export const roomColumns = [
+  { field: "_id", headerName: "ID", width: 230 },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 150,
+  },
+
+  {
+    field: "desc",
+    headerName: "Description",
+    width: 300,
+  },
+  {
+    field: "price",
+    headerName: "Price",
+    width: 100,
+  },
+  {
+    field: "maxPeople",
+    headerName: "Max People",
+    width: 100,
+  },
+];
+
+export const hotelColumns = [
+  { field: "_id", headerName: "ID", width: 230 },
+  {
+    field: "name",
+    headerName: "Name",
+    width: 150,
+  },
+
+  {
+    field: "type",
+    headerName: "Type",
+    width: 100,
+  },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 230,
+  },
+  {
+    field: "city",
+    headerName: "City",
+    width: 100,
   },
 ];
